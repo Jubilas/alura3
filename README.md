@@ -1,0 +1,138 @@
+# Oracle OCI Agent — Sistema Híbrido RAG + Motor Analítico Pandas
+
+Aplicação de **Inteligência Artificial Generativa e Análise Documental** construída com **LangChain**, **LangGraph**, **Groq** (*Llama 3.3 70B*)(16/08/2026), **FastEmbed** (*embeddings locais*), **ChromaDB**, **Pandas Engine** e interface em **Streamlit**.
+
+---
+
+## Arquitetura do Sistema
+
+O agente adota um padrão híbrido orquestrado pelo **LangGraph**:
+
+```text
+                           ┌──────────────────────────────┐
+                           │      Pergunta do Usuário     │
+                           └──────────────┬───────────────┘
+                                          │
+                                          ▼
+                               ┌──────────────────────┐
+                               │   no_rotear_intencao │
+                               │  (Classifica Intenção│
+                               │   baseado no Schema) │
+                               └──────────┬───────────┘
+                                          │
+                     ┌────────────────────┴───────────────────┐
+                     ▼                                        ▼
+       [Intenção Tabular / Matemática]               [Intenção Textual / Regras]
+       ┌──────────────────────────────┐              ┌─────────────────────────┐
+       │      no_analisar_tabela      │              │  no_recuperar_documentos│
+       │    (Gera código Pandas +     │              │ (Busca semântica no     │
+       │     Auto-correção de erros)  │              │  ChromaDB com FastEmbed)│
+       └──────────────┬───────────────┘              └────────────┬────────────┘
+                      │ (Se 0 registros / Fallback)               │
+                      └───────────────────────┬───────────────────┘
+                                              │
+                                              ▼
+                                 ┌─────────────────────────┐
+                                 │    no_gerar_resposta    │
+                                 │   (Síntese com Groq     │
+                                 │    Llama 3.3 70B)       │
+                                 └────────────┬────────────┘
+                                              │
+                                              ▼
+                                 ┌─────────────────────────┐
+                                 │ Resposta com Fontes UI  │
+                                 └─────────────────────────┘
+```
+
+---
+
+## Estrutura de pastas
+
+```text
+Pasta/
+├── src/
+│   ├── __init__.py        # ajudar nos import
+│   ├── state.py           # 
+│   ├── ingestion.py       # Processo de ingestão
+│   └── graph.py           # Orquestração do grafo híbrido com Groq Llama 3.3
+├── app.py                 # Interface Streamlit
+├── requirements.txt       # Dependências com versões estáveis
+├── .env.example           # Modelo de variáveis de ambiente
+├── Dockerfile             # Container para deploy
+├── docker-compose.yml     # Orquestração com volumes persistentes
+├── .gitignore             #
+└── README.md              # Documentação
+```
+
+---
+
+## Tecnologias Usadas
+
+- **Python 3.10+ / 3.11**
+- **LangChain & LangGraph:** Orquestração de grafo de estados conversacional (`StateGraph`).
+- **Groq (Llama 3.3 70B Versatile):** Inferência de altíssima velocidade e capacidade analítica.
+- **FastEmbed (`BAAI/bge-small-en-v1.5`):** Embeddings locais de alta performance sem custos de API.
+- **ChromaDB:** Banco vetorial persistente em disco com mecanismo de auto-cura.
+- **Pandas:** Execução dinâmica e determinística de cálculos sobre grandes volumes de dados.
+- **pypdf:** Extração de texto página por página em arquivos PDF.
+- **Streamlit:** Interface web executiva e contrastante com suporte a temas claro/escuro.
+
+---
+
+## Como Executar o Projeto
+
+### Opção 1: Via Docker (Recomendado)
+
+Crie o arquivo `.env` a partir do modelo:
+
+```bash
+    cp .env.example .env
+```
+
+   Adicione sua chave do Groq no arquivo `.env`:
+
+```env
+   GROQ_API_KEY=gsk_sua_chave_aqui
+```
+
+Inicie os containers:
+
+```bash
+   docker-compose up --build
+```
+
+Acesse no navegador: `http://localhost:8501`
+
+---
+
+### Opção 2: Execução Local com Python
+
+1. Crie e ative o ambiente virtual:
+
+   ```bash
+   # Windows (PowerShell)
+   python -m venv venv
+   .\venv\Scripts\Activate.ps1
+
+   # Linux / macOS
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+
+2. Instale as dependências:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. Configure o arquivo `.env`:
+
+   ```bash
+   copy .env.example .env
+   ```
+
+4. Inicie a aplicação Streamlit:
+
+   ```bash
+   streamlit run app.py
+   ```

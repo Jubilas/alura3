@@ -1,0 +1,30 @@
+# Ambientes Virtuais
+venv/
+.venv/
+env/
+ENV/
+
+# Arquivos de Chaves e Variáveis de Ambiente (NUNCA ENVIAR PARA O GITHUB)
+.env
+*.env.local
+.env.example
+
+# Cache do Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Diretórios de Dados e Persistência Local
+chroma_db/
+data_files/
+
+# IDEs e Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Sistema Operacional
+.DS_Store
+Thumbs.db
