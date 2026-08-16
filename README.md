@@ -71,7 +71,7 @@ Pasta/
 - **Python 3.10+ / 3.11**
 - **LangChain & LangGraph:** Orquestração de grafo de estados conversacional (`StateGraph`).
 - **Groq (Llama 3.3 70B Versatile):** Inferência de altíssima velocidade e capacidade analítica.
-- **FastEmbed (`BAAI/bge-small-en-v1.5`):** Embeddings locais de alta performance sem custos de API.
+- **FastEmbed (`BAAI/bge-small-en-v1.5`):** Embeddings locais.
 - **ChromaDB:** Banco vetorial persistente em disco com mecanismo de auto-cura.
 - **Pandas:** Execução dinâmica e determinística de cálculos sobre grandes volumes de dados.
 - **pypdf:** Extração de texto página por página em arquivos PDF.
