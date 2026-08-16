@@ -7,7 +7,7 @@ ENV/
 # Arquivos de Chaves e Variáveis de Ambiente (NUNCA ENVIAR PARA O GITHUB)
 .env
 *.env.local
-.env.example
+
 
 # Cache do Python
 __pycache__/
