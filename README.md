@@ -69,19 +69,19 @@ Pasta/
 ## Tecnologias Usadas
 
 - **Python 3.10+ / 3.11**
-- **LangChain & LangGraph:** Orquestração de grafo de estados conversacional (`StateGraph`).
-- **Groq (Llama 3.3 70B Versatile):** Inferência de altíssima velocidade e capacidade analítica.
+- **LangChain & LangGraph:** Orquestração de grafo (`StateGraph`).
+- **Groq (Llama 3.3 70B Versatile):**.
 - **FastEmbed (`BAAI/bge-small-en-v1.5`):** Embeddings locais.
-- **ChromaDB:** Banco vetorial persistente em disco com mecanismo de auto-cura.
+- **ChromaDB:** Banco vetorial persistente em disco com mecanismo de solucionar os próprios problemas.
 - **Pandas:** Execução dinâmica e determinística de cálculos sobre grandes volumes de dados.
 - **pypdf:** Extração de texto página por página em arquivos PDF.
-- **Streamlit:** Interface web executiva e contrastante com suporte a temas claro/escuro.
+- **Streamlit:** Interface web.
 
 ---
 
 ## Como Executar o Projeto
 
-### Opção 1: Via Docker (Recomendado)
+### Opção 1: Via Docker
 
 Crie o arquivo `.env` a partir do modelo:
 
