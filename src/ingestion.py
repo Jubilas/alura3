@@ -38,28 +38,32 @@ def obter_banco_vetorial(
     os.makedirs(diretorio_persistencia, exist_ok=True)
 
     try:
-        return Chroma(
+        banco = Chroma(
             collection_name=nome_colecao,
             embedding_function=modelo_embeddings,
             persist_directory=diretorio_persistencia,
         )
+        _ = banco._collection.count()
+        return banco
     except Exception as erro:
-        print(f"Inconsistência no banco vetorial ({erro}). Recriando base limpa...")
+        print(f"Inconsistência detectada no banco vetorial ({erro}). Recriando base limpa...")
         try:
-            for item in os.listdir(diretorio_persistencia):
-                caminho_item = os.path.join(diretorio_persistencia, item)
-                if os.path.isfile(caminho_item):
-                    os.remove(caminho_item)
-                elif os.path.isdir(caminho_item):
-                    shutil.rmtree(caminho_item)
+            if os.path.exists(diretorio_persistencia):
+                shutil.rmtree(diretorio_persistencia)
+                os.makedirs(diretorio_persistencia, exist_ok=True)
         except Exception as erro_limpeza:
             print(f"Aviso na limpeza automática: {erro_limpeza}")
 
-        return Chroma(
+        banco_limpo = Chroma(
             collection_name=nome_colecao,
             embedding_function=modelo_embeddings,
             persist_directory=diretorio_persistencia,
         )
+        try:
+            _ = banco_limpo._collection.count()
+        except Exception:
+            pass
+        return banco_limpo
 
 
 def carregar_arquivo_pdf(
@@ -294,7 +298,17 @@ def armazenar_chunks_no_banco(
     if chunks:
         for i in range(0, len(chunks), tamanho_lote):
             lote = chunks[i : i + tamanho_lote]
-            banco_vetorial.add_documents(documents=lote)
+            try:
+                banco_vetorial.add_documents(documents=lote)
+            except Exception as erro:
+                print(f"Inconsistência no ChromaDB ({erro}). Resetando base limpa e inserindo novamente...")
+                limpar_banco_vetorial(diretorio_persistencia=diretorio_persistencia, diretorio_dados=None)
+                banco_vetorial = obter_banco_vetorial(
+                    diretorio_persistencia=diretorio_persistencia,
+                    nome_colecao=nome_colecao,
+                )
+                banco_vetorial.add_documents(documents=chunks)
+                break
 
     return banco_vetorial
 
@@ -479,9 +493,12 @@ def executar_codigo_pandas(codigo: str, diretorio_dados: str = "./data_files") -
         return {"sucesso": False, "resultado": "", "erro": str(e), "codigo": codigo_limpo, "arquivo": primeiro_nome}
 
 
-def limpar_banco_vetorial(diretorio_persistencia: str = "./chroma_db", diretorio_dados: str = "./data_files") -> bool:
+def limpar_banco_vetorial(
+    diretorio_persistencia: str = "./chroma_db",
+    diretorio_dados: Optional[str] = "./data_files",
+) -> bool:
     sucesso = True
-    if os.path.exists(diretorio_persistencia):
+    if diretorio_persistencia and os.path.exists(diretorio_persistencia):
         try:
             shutil.rmtree(diretorio_persistencia)
             os.makedirs(diretorio_persistencia, exist_ok=True)
@@ -489,7 +506,7 @@ def limpar_banco_vetorial(diretorio_persistencia: str = "./chroma_db", diretorio
             print(f"Erro ao limpar banco vetorial: {erro}")
             sucesso = False
 
-    if os.path.exists(diretorio_dados):
+    if diretorio_dados and os.path.exists(diretorio_dados):
         try:
             shutil.rmtree(diretorio_dados)
             os.makedirs(diretorio_dados, exist_ok=True)
