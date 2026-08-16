@@ -8,7 +8,6 @@ ENV/
 .env
 *.env.local
 
-
 # Cache do Python
 __pycache__/
 *.py[cod]
