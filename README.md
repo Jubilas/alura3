@@ -43,6 +43,7 @@ O agente adota um padrão híbrido orquestrado pelo **LangGraph**:
                                  │ Resposta com Fontes UI  │
                                  └─────────────────────────┘
 ```
+
 ---
 
 ## Demonstração Visual (Alura Challenge)
@@ -55,7 +56,7 @@ Abaixo estão as capturas de tela demonstrando a interface em execução, upload
 
 | Consulta Analítica com Pandas | Pagina da frente |
 | :---: | :---: |
-| ![Consulta Tabular](ALURACHALLENGE/Captura%20de%20tela%202026-08-17%20005316.png) | ![](ALURACHALLENGE/Captura%20de%20tela%202026-08-17%20005531.png) |
+| ![Consulta Tabular](ALURACHALLENGE/Captura%20de%20tela%202026-08-17%20005316.png) | ![Foto4](ALURACHALLENGE/Captura%20de%20tela%202026-08-17%20005531.png) |
 
 ---
 
