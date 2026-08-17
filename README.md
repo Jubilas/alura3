@@ -62,6 +62,7 @@ Abaixo estão as capturas de tela demonstrando a interface em execução, upload
 ---
 
 ## Sobre o CHALLENGE
+
    ```bash
    O Projeto apresenta arquivos docker para rodar mais facil localmente,
    o deploy na OCI foi feito seguindo os seguintes passos.
@@ -83,6 +84,7 @@ Abaixo estão as capturas de tela demonstrando a interface em execução, upload
    pkill -f streamlit (para fechar a ferramenta)
 
  ```
+
 ---
 
 ## Estrutura de pastas
