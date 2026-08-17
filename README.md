@@ -1,6 +1,7 @@
 # Oracle OCI Agent — Sistema Híbrido RAG + Motor Analítico Pandas
 
-Aplicação de **Inteligência Artificial Generativa e Análise Documental** construída com **LangChain**, **LangGraph**, **Groq** (*Llama 3.3 70B*)(16/08/2026), **FastEmbed** (*embeddings locais*), **ChromaDB**, **Pandas Engine** e interface em **Streamlit**.
+Aplicação de **Inteligência Artificial Generativa e Análise Documental** construída com **LangChain**, **LangGraph**, **Groq** (*Llama 3.3 70B*)(16/08/2026), **FastEmbed** (*embeddings locais*), **ChromaDB**, **Pandas Engine** e interface em **Streamlit**.\
+Essa ferramenta atende as minhas necessidades ao permitir que eu incorpore e busque rapidamente por **manuais inteiros de programas como **blender, unity, vscode, além de materias da faculdade**. Isso permite que eu acelere o desenvolvimento de minhas aplicações e garante que eu tenha acesso a IA mesmo que eu esteja fora de casa graças ao deploy na OCI.
 
 ---
 
@@ -58,6 +59,28 @@ Abaixo estão as capturas de tela demonstrando a interface em execução, upload
 | :---: | :---: |
 | ![Consulta Tabular](ALURACHALLENGE/Captura%20de%20tela%202026-08-17%20005316.png) | ![Foto4](ALURACHALLENGE/Captura%20de%20tela%202026-08-17%20005531.png) |
 
+---
+
+## Sobre o CHALLENGE
+   ```bash
+   O Projeto apresenta arquivos docker para rodar mais facil localmente,\
+   o deploy na OCI foi feito seguindo os seguintes passos.\
+   git clone <https://github.com/Jubilas/alura3.git> \
+   cd alura3\
+   sudo dnf install -y git python3 python3-pip\
+   python3 -m venv venv\
+   source venv/bin/activate\
+   pip install --upgrade pip\
+   pip install -r requirements.txt\
+   cp .env.example .env\
+   nano .env (procure por GROQ_API_KEY e coloque a key no espaço ao lado)\
+   #Não esqueça de liberar as portas dentro do OCI e tambem dentro do firewall
+   nohup streamlit run app.py --server.port 8501 --server.address 0.0.0.0 > 
+   app.log 2>&1 & (Para executar a ferramenta)\
+   tail -n 20 app.log (para ver se funcionou)\
+   pkill -f streamlit (para fechar a ferramenta)\
+
+ ```
 ---
 
 ## Estrutura de pastas
