@@ -1,0 +1,25 @@
+PERGUNTAS FREQUENTES (FAQ) — ATENDIMENTO NEXUS E-COMMERCE
+
+Q1: Como posso rastrear o meu pedido?
+R: Assim que o pacote for despachado, você receberá um e-mail com o código de rastreamento e o link da transportadora. Também é possível consultar em tempo real acessando "Minha Conta > Meus Pedidos > Ver Rastreio" no site.
+
+Q2: Quais são as formas de pagamento aceitas?
+R: Aceitamos Cartão de Crédito (Visa, Mastercard, Elo, American Express e Hipercard em até 10x sem juros), Pix (com 5% de desconto imediato) e Boleto Bancário à vista (vencimento em 2 dias úteis).
+
+Q3: É possível alterar o endereço de entrega após a finalização da compra?
+R: Por motivos de segurança fiscal e cálculo de frete, se a Nota Fiscal já tiver sido emitida ou o pedido despachado, não é possível alterar o endereço. Caso o pedido esteja apenas com pagamento aprovado, solicite a alteração urgente via WhatsApp oficial: (11) 98765-4321.
+
+Q4: Vocês realizam entregas aos finais de semana e feriados?
+R: Nossas transportadoras realizam entregas de segunda a sexta-feira, das 08h às 20h, e aos sábados das 08h às 14h. Não ocorrem entregas regulares aos domingos e feriados nacionais.
+
+Q5: O que acontece se não houver ninguém no local para receber o pacote?
+R: A transportadora realiza até 3 (três) tentativas consecutivas de entrega em dias úteis diferentes. Caso todas falhem, o pacote é direcionado para a agência mais próxima (onde fica disponível para retirada por 7 dias) ou retorna ao nosso Centro de Distribuição.
+
+Q6: Como solicitar a 2ª via da Nota Fiscal (DANFE)?
+R: A 2ª via é enviada automaticamente em formato XML e PDF para o e-mail cadastrado. Ela também pode ser baixada a qualquer momento na aba "Meus Pedidos" clicando em "Baixar NF-e".
+
+Q7: Como entrar em contato com o suporte ao cliente?
+R: Atendemos de segunda a sexta, das 09h às 18h:
+- E-mail: atendimento@nexusecommerce.com.br
+- Telefone: 0800 123 4567
+- Chat Online no site oficial.

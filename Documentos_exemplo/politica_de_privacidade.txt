@@ -1,0 +1,30 @@
+POLÍTICA DE PRIVACIDADE E PROTEÇÃO DE DADOS — NEXUS E-COMMERCE LTDA.
+Última atualização: 15 de janeiro de 2026
+
+1. OBJETIVO E ESCOPO
+A Nexus E-commerce Ltda. (CNPJ: 12.345.678/0001-90) tem o compromisso de proteger a privacidade e os dados pessoais de seus clientes e usuários, em estrita conformidade com a Lei Geral de Proteção de Dados Pessoais (LGPD - Lei nº 13.709/2018).
+
+2. DADOS COLETADOS
+* Dados Cadastrais: Nome completo, CPF, e-mail, telefone para contato, data de nascimento e endereço de entrega/faturamento.
+* Dados de Pagamento: Informações de cartão de crédito (criptografadas via tokenização PCI-DSS; a Nexus não armazena o código de segurança CVV).
+* Dados de Navegação: Endereço IP, tipo de dispositivo, navegador, histórico de páginas visualizadas e cookies essenciais/analíticos.
+
+3. FINALIDADE DO TRATAMENTO
+* Processar e faturar pedidos de compras.
+* Viabilizar a logística e entrega com transportadoras parceiras.
+* Prevenção a fraudes e análise de risco de crédito.
+* Envio de comunicações operacionais (status do pedido, código de rastreio).
+* Envio de newsletters promocionais (apenas mediante consentimento expresso, revogável a qualquer momento).
+
+4. COMPARTILHAMENTO DE DADOS
+Os dados pessoais são compartilhados estritamente com:
+* Gateways de pagamento homologados (ex: Pagar.me, Mercado Pago).
+* Transportadoras e Correios para cumprimento da entrega física.
+* Plataformas de antifraude e validação de identidade.
+* Autoridades judiciais ou regulatórias, mediante ordem judicial formal.
+
+5. RETENÇÃO E EXCLUSÃO
+Os dados fiscais e de transações financeiras são armazenados pelo prazo legal mínimo de 5 (cinco) anos, conforme exigência do Código Tributário Nacional e Marco Civil da Internet. Demais dados podem ser excluídos a pedido do titular.
+
+6. DIREITOS DO TITULAR E CONTATO
+O titular pode solicitar a confirmação, correção ou exclusão de seus dados entrando em contato com o Encarregado de Dados (DPO) através do e-mail: dpo@nexusecommerce.com.br.
