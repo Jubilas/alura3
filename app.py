@@ -5,6 +5,9 @@ Design sóbrio, minimalista e corporativo sem emojis.
 Todas as funções, comentários e textos em Português (PT-BR).
 """
 
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 import os
 import time
 from datetime import datetime
