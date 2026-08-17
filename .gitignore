@@ -27,3 +27,5 @@ data_files/
 # Sistema Operacional
 .DS_Store
 Thumbs.db
+
+.tmp.driveupload
