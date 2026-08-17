@@ -43,24 +43,39 @@ O agente adota um padrão híbrido orquestrado pelo **LangGraph**:
                                  │ Resposta com Fontes UI  │
                                  └─────────────────────────┘
 ```
+---
+
+## Demonstração Visual (Alura Challenge)
+
+Abaixo estão as capturas de tela demonstrando a interface em execução, upload e indexação de documentos, processamento de perguntas analíticas e exibição das fontes:
+
+| Tela Inicial e Configurações | Ingestão e Estatísticas da Base |
+| :---: | :---: |
+| ![Tela Inicial](ALURACHALLENGE/Captura%20de%20tela%202026-08-17%20004923.png) | ![Ingestão e Estatísticas](ALURACHALLENGE/Captura%20de%20tela%202026-08-17%20004934.png) |
+
+| Consulta Analítica com Pandas | Pagina da frente |
+| :---: | :---: |
+| ![Consulta Tabular](ALURACHALLENGE/Captura%20de%20tela%202026-08-17%20005316.png) | ![](ALURACHALLENGE/Captura%20de%20tela%202026-08-17%20005531.png) |
 
 ---
 
 ## Estrutura de pastas
 
 ```text
-Pasta/
+alura3/
+├── ALURACHALLENGE/        # Capturas de tela e evidências do desafio
+├── Documentos_exemplo/    # Documentos de teste (PDFs, CSV, TXTs)
 ├── src/
-│   ├── __init__.py        # ajudar nos import
-│   ├── state.py           # 
-│   ├── ingestion.py       # Processo de ingestão
-│   └── graph.py           # Orquestração do grafo híbrido com Groq Llama 3.3
+│   ├── __init__.py        # Exportações e imports centralizados
+│   ├── state.py           # Definição do EstadoAgente (TypedDict)
+│   ├── ingestion.py       # Ingestão, FastEmbed, ChromaDB e Pandas Engine
+│   └── graph.py           # Grafo híbrido LangGraph com Groq Llama 3.3
 ├── app.py                 # Interface Streamlit
-├── requirements.txt       # Dependências com versões estáveis
+├── requirements.txt       # Dependências Python
 ├── .env.example           # Modelo de variáveis de ambiente
-├── Dockerfile             # Container para deploy
+├── Dockerfile             # Container para deploy na OCI
 ├── docker-compose.yml     # Orquestração com volumes persistentes
-├── .gitignore             #
+├── .gitignore             # Regras de exclusão do Git
 └── README.md              # Documentação
 ```
 
